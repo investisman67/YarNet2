@@ -1,0 +1,34 @@
+/* Ajoutez ceci pour masquer initialement le menu */
+.hidden {
+  display: none;
+}
+
+/* Ajoutez ceci pour aligner le menu à droite */
+header {
+  position: relative;
+}
+
+#menu {
+  position: absolute;
+  top: 50px; /* ajustez la position verticale selon vos besoins */
+  right: 10px; /* ajustez la position horizontale selon vos besoins */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu ul li {
+  margin-bottom: 10px;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  color: #333;
+}
