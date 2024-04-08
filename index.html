@@ -41,18 +41,18 @@
       background-color: #f9f9f9;
       border: 1px solid #ccc;
       border-radius: 5px;
-      overflow: hidden; /* Permet de cacher le débordement */
-      position: relative; /* Permet d'utiliser position absolue pour le défilement */
+      overflow: hidden;
+      position: relative;
     }
 
     .product-container .product-list {
-      display: flex; /* Affiche les éléments en ligne */
-      position: absolute; /* Position absolue pour le défilement */
-      transition: transform 0.5s ease; /* Animation de défilement */
+      display: flex;
+      position: absolute;
+      transition: transform 0.5s ease;
     }
 
     .product {
-      flex: 0 0 100px; /* Largeur fixe des éléments */
+      flex: 0 0 100px;
       padding: 5px;
     }
 
@@ -89,25 +89,33 @@
       <div class="product-list" id="featured-products"></div>
     </div>
     <div class="category">
-      <h2>Cosmétiques</h2>
-      <!-- Contenu de la catégorie cosmétiques -->
+      <h2>Catégorie : Cosmétiques</h2>
+      <div>
+        <img src="cosmetics.jpg" alt="Cosmétiques">
+        <p>Description des cosmétiques</p>
+        <p>Prix : $20</p>
+      </div>
     </div>
     <div class="category">
-      <h2>Vêtements</h2>
-      <!-- Contenu de la catégorie vêtements -->
+      <h2>Catégorie : Vêtements</h2>
+      <div>
+        <img src="clothes.jpg" alt="Vêtements">
+        <p>Description des vêtements</p>
+        <p>Prix : $30</p>
+      </div>
     </div>
     <div class="category">
-      <h2>Chaussures</h2>
-      <!-- Contenu de la catégorie chaussures -->
-    </div>
-    <div class="category">
-      <h2>Electronique</h2>
-      <!-- Contenu de la catégorie electronique -->
+      <h2>Catégorie : Chaussures</h2>
+      <div>
+        <img src="shoes.jpg" alt="Chaussures">
+        <p>Description des chaussures</p>
+        <p>Prix : $40</p>
+      </div>
     </div>
   </main>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Simulation des données des produits
+      // Simulation des données des produits en vedette
       const products = [
         { name: 'Produit 1', description: 'Description du produit 1', price: '10$', imageUrl: 'https://via.placeholder.com/150' },
         { name: 'Produit 2', description: 'Description du produit 2', price: '20$', imageUrl: 'https://via.placeholder.com/150' },
@@ -148,20 +156,6 @@
 
         featuredProductsDiv.appendChild(productDiv);
       });
-
-      // Défilement latéral automatique
-      const productContainerWidth = featuredProductsContainer.offsetWidth;
-      const productListWidth = featuredProductsDiv.offsetWidth;
-      let scrollPosition = 0;
-
-      setInterval(() => {
-        if (scrollPosition <= productListWidth - productContainerWidth) {
-          scrollPosition += 100; // Défilement de 100 pixels à chaque itération
-        } else {
-          scrollPosition = 0; // Revenir au début
-        }
-        featuredProductsDiv.style.transform = `translateX(-${scrollPosition}px)`;
-      }, 5000); // Défilement toutes les 5 secondes
     });
   </script>
 </body>
